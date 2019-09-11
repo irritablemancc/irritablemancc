@@ -12,6 +12,7 @@ define("port", default=8000, help="主机端口", type=int)
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
+        print('添加了一个打印')
         abc = self.get_argument('arg', '哈哈哈哈哈哈哈哈')
         name = self.get_argument('name', 'Admin')
         sex = self.get_argument('sex', '保密')
@@ -21,16 +22,10 @@ class MainHandler(tornado.web.RequestHandler):
 
 class BlockHandler(tornado.web.RequestHandler):
     def get(self):
+        print('添加了两个打印')
         title = '草'
         content = '''
-            离离原上草，
-            一岁一枯荣，
-            野火烧不尽，
-            春风吹又生，
-            远芳侵古道，
-            晴翠接荒城，
-            又送王孙去，
-            萋萋满别情，
+            s十年生死两茫茫，不思量自难忘，千里孤坟，无处话凄凉，纵使相逢应不识，尘满面，鬓如霜。夜来幽梦忽还乡，小轩窗，正梳妆，相顾无言，惟有泪千行。料得年年断肠处，明月夜短松冈。
         '''
         self.render('article.html', title=title, content=content)
 
